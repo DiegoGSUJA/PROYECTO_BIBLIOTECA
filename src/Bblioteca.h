@@ -6,11 +6,8 @@
 #define PROYECTO_BIBLIOTECA_BBLIOTECA_H
 
 
-
 class Bblioteca {
-
 };
-
 
 
 #endif //PROYECTO_BIBLIOTECA_BBLIOTECA_H

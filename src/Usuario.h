@@ -6,11 +6,8 @@
 #define PROYECTO_BIBLIOTECA_USUARIO_H
 
 
-
 class Usuario {
-
 };
-
 
 
 #endif //PROYECTO_BIBLIOTECA_USUARIO_H

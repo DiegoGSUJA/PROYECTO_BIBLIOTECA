@@ -1,27 +1,47 @@
 @startuml
-'https://plantuml.com/class-diagram
+class Libro {
+  - titulo : string
+  - autor : string
+  - anio : int
+  - genero : string
+  - isbn : string
+  - disponible : bool
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+  + Libro(titulo, autor, anio, genero, isbn)
+  + getTitulo() : string
+  + getAutor() : string
+  + isDisponible() : bool
+  + prestarLibro()
+  + devolverLibro()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Usuario {
+  - id : int
+  - nombre : string
+  - email : string
+  - librosPrestados : vector<string>
+
+  + Usuario(id, nombre, email)
+  + getNombre() : string
+  + getEmail() : string
+  + prestarLibro(isbn : string)
+  + devolverLibro(isbn : string)
+  + getLibrosPrestados() : vector<string>
 }
 
+class Biblioteca {
+  - libros : map<string, Libro>
+  - usuarios : map<int, Usuario>
+
+  + agregarLibro(libro : Libro)
+  + agregarUsuario(usuario : Usuario)
+  + buscarLibroPorTitulo(titulo : string) : vector<Libro>
+  + prestarLibro(isbn : string, userId : int) : bool
+  + devolverLibro(isbn : string, userId : int) : bool
+  + mostrarLibrosDisponibles() : vector<Libro>
+}
+
+Biblioteca "1" o-- "*" Libro : contiene
+Biblioteca "1" o-- "*" Usuario : gestiona
+Usuario "1" -- "*" Libro : presta
 @enduml
