@@ -4,3 +4,16 @@ cmake-build-*/
 *.swp
 *.pro.user
 *.DS_Store
+
+# Archivos temporales
+*.log
+*.tmp
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.out
+build/
+test-results/
+Thumbs.db
