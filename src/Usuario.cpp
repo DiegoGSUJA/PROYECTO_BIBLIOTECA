@@ -1,8 +1,8 @@
 #include "Usuario.h"
-#include <algorithm> // Para std::remove
+#include <algorithm>
 
-Usuario::Usuario(int i, const std::string& n, const std::string& e)
-    : id(i), nombre(n), email(e) {}
+Usuario::Usuario(int i, const std::string& n, const std::string& e, const std::string& f)
+    : id(i), nombre(n), email(e), fechaRegistro(f) {}
 
 std::string Usuario::getNombre() const { return nombre; }
 std::string Usuario::getEmail() const { return email; }
@@ -18,4 +18,8 @@ void Usuario::devolverLibro(const std::string& isbn) {
 
 std::vector<std::string> Usuario::getLibrosPrestados() const {
     return librosPrestados;
+}
+
+std::string Usuario::getFechaRegistro() const {
+    return fechaRegistro;
 }
