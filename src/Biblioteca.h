@@ -6,7 +6,7 @@
 #define PROYECTO_BIBLIOTECA_BBLIOTECA_H
 
 
-class Bblioteca {
+class Biblioteca {
 };
 
 
