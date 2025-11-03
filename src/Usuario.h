@@ -1,13 +1,23 @@
-//
-// Created by jienn on 03/11/2025.
-//
+#ifndef USUARIO_H
+#define USUARIO_H
 
-#ifndef PROYECTO_BIBLIOTECA_USUARIO_H
-#define PROYECTO_BIBLIOTECA_USUARIO_H
-
+#include <string>
+#include <vector>
 
 class Usuario {
+private:
+    int id;
+    std::string nombre;
+    std::string email;
+    std::vector<std::string> librosPrestados; // Lista de ISBNs
+
+public:
+    Usuario(int id, const std::string& nombre, const std::string& email);
+    std::string getNombre() const;
+    std::string getEmail() const;
+    void prestarLibro(const std::string& isbn);
+    void devolverLibro(const std::string& isbn);
+    std::vector<std::string> getLibrosPrestados() const;
 };
 
-
-#endif //PROYECTO_BIBLIOTECA_USUARIO_H
+#endif
